@@ -1,11 +1,10 @@
-import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import * as React from "react";
+import { Link, graphql } from "gatsby";
 
-import Bio from '../components/bio';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
-
+import Bio from "../components/bio";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { rhythm } from "../utils/typography";
 
 interface IBlogIndexProps {
   data: {
@@ -36,10 +35,7 @@ interface IBlogIndexProps {
   };
 }
 
-const BlogIndex: React.FunctionComponent<IBlogIndexProps> = ({
-  data,
-  location,
-}) => {
+const BlogIndex: React.FunctionComponent<IBlogIndexProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const courses = data.site.siteMetadata.courses;
   // const posts = data.allMarkdownRemark.edges;
@@ -48,27 +44,29 @@ const BlogIndex: React.FunctionComponent<IBlogIndexProps> = ({
     <Layout location={location} title={siteTitle}>
       <SEO title="Courses" />
       <Bio />
-      {courses.filter(c => !c.disabled).map(({ title, id, squareImage, summary }) => {
-        return (
-          <article className='course-summary' key={id}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <img style={{float: 'right'}} width={150} src={squareImage} />
-                <Link style={{ boxShadow: `none` }} to={`course/${id}`}>
-                  {title}
-                </Link>
-              </h3>
-            </header>
-            <section>
-              <p>{summary}</p>
-            </section>
-          </article>
-        );
-      })}
+      {courses
+        .filter((c) => !c.disabled)
+        .map(({ title, id, squareImage, summary }) => {
+          return (
+            <article className="course-summary" key={id}>
+              <header>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
+                  <img style={{ float: "right" }} width={150} src={squareImage} />
+                  <Link style={{ boxShadow: `none` }} to={`course/${id}`}>
+                    {title}
+                  </Link>
+                </h3>
+              </header>
+              <section>
+                <p>{summary}</p>
+              </section>
+            </article>
+          );
+        })}
     </Layout>
   );
 };
@@ -85,10 +83,6 @@ export const pageQuery = graphql`
           title
           summary
           squareImage
-          facebookImage
-          twitterImage
-          femCourseUrl
-          femCoursePublished
           disabled
         }
       }

@@ -49,9 +49,9 @@ Since Node.js uses fewer threads, it utilizes fewer resources/memory, resulting 
 
 ## NPM
 
-npm is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day. These applications can be searched for on https://www.npmjs.com/. Once you have a package you want to install, it can be installed with a single command-line command.
+npm is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day. These applications can be searched for on [NPM](https://www.npmjs.com/). Once you have a package you want to install, it can be installed with a single command-line command.
 
-```
+```sh
 npm install react
 ```
 

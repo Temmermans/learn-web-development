@@ -2,10 +2,10 @@ const fs = require(`fs`);
 const path = require(`path`);
 const { groupBy, sortBy } = require(`lodash`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
-const yaml = require('js-yaml');
-const PACKAGE_JSON_PATH = require('pkg-up').sync();
+const yaml = require("js-yaml");
+const PACKAGE_JSON_PATH = require("pkg-up").sync();
 
-const PROJECT_ROOT_PATH = path.join(PACKAGE_JSON_PATH, '..');
+const PROJECT_ROOT_PATH = path.join(PACKAGE_JSON_PATH, "..");
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -14,10 +14,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       id: String
       title: String
       squareImage: String
-      facebookImage: String
-      twitterImage: String
-      femCourseUrl: String
-      femCoursePublished: String
       summary: String
     }
   `;
@@ -27,27 +23,18 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const ymlDoc = yaml.load(
-    fs.readFileSync(
-      path.join(PROJECT_ROOT_PATH, 'content', 'courses.yml'),
-      'utf-8',
-    ),
-  );
+  const ymlDoc = yaml.load(fs.readFileSync(path.join(PROJECT_ROOT_PATH, "content", "courses.yml"), "utf-8"));
   ymlDoc.forEach((element) => {
     console.log(`Creating page: ${element.id}`);
     createPage({
       path: `/course/${element.id}`,
-      component: require.resolve('./src/templates/course-page.tsx'),
+      component: require.resolve("./src/templates/course-page.tsx"),
       context: {
         title: element.title,
         id: element.id,
         disabled: element.disabled,
         summary: element.summary,
         squareImage: element.squareImage,
-        facebookImage: element.facebookImage,
-        twitterImage: element.twitterImage,
-        femCourseUrl: element.femCourseUrl,
-        femCoursePublished: element.femCoursePublished,
       },
     });
   });
@@ -56,10 +43,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___order], order: ASC }
-          limit: 1000
-        ) {
+        allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC }, limit: 1000) {
           edges {
             node {
               fields {
@@ -75,7 +59,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    `,
+    `
   );
 
   if (result.errors) {
@@ -86,22 +70,24 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMarkdownRemark.edges;
 
   const sorted_posts = groupBy(
-    sortBy(posts.map((post) => ({
-      path: post.node.fields.slug,
-      component: blogPost,
-      node: post.node,
-      context: {
-        slug: post.node.fields.slug,
-        title: post.node.frontmatter.title,
-        course: post.node.frontmatter.course,
-        order: post.node.frontmatter.order,
-      },
-    })
-  ), ['context.course', 'context.order']),
-    'context.course',
-  )
+    sortBy(
+      posts.map((post) => ({
+        path: post.node.fields.slug,
+        component: blogPost,
+        node: post.node,
+        context: {
+          slug: post.node.fields.slug,
+          title: post.node.frontmatter.title,
+          course: post.node.frontmatter.course,
+          order: post.node.frontmatter.order,
+        },
+      })),
+      ["context.course", "context.order"]
+    ),
+    "context.course"
+  );
 
-  Object.keys(sorted_posts).forEach(courseName => {
+  Object.keys(sorted_posts).forEach((courseName) => {
     const courseArticles = sorted_posts[courseName];
     courseArticles.forEach((postData, index) => {
       const next = index === courseArticles.length - 1 ? null : courseArticles[index + 1].node;
@@ -113,10 +99,10 @@ exports.createPages = async ({ graphql, actions }) => {
           previous: previous,
           next: next,
         },
-      }
+      };
       createPage(pageArg);
     });
-  })
+  });
 };
 
 /**

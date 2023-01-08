@@ -60,7 +60,7 @@ In the dogsitting example, here’s how a programmer could think about organizin
 1. Create a parent class for all dogs as a blueprint of information and behaviors (methods) that all dogs will have, regardless of type.
 2. Create child classes to represent different subcategories of dog under the generic parent blueprint. 3. Add unique attributes and behaviors to the child classes to represent differences 4. Create objects from the child class that represent dogs within that subgroup
 
-[![](https://mermaid.ink/img/pako:eNp1kMsOwiAQRX-FzEpj-wPEZU3c65LNCNOWtIChsDC1_y59WBujrLi558wEepBOEXCQLXZdobHyaIRl6RSuYsdnnrMzeaVtlfJXcfUom20zDRn7fs6MHW7om91-jsOW-kxd4XwLJ7dOyE93s_ivHEZmtSEDQ96gVumtkyMg1GRIAE9XRSXGNggQdkTjXWGgk9LBeeAlth1lgDG4y8NK4MFHekPLly3U8ALpBmgm?type=png)](https://mermaid.live/edit#pako:eNp1kMsOwiAQRX-FzEpj-wPEZU3c65LNCNOWtIChsDC1_y59WBujrLi558wEepBOEXCQLXZdobHyaIRl6RSuYsdnnrMzeaVtlfJXcfUom20zDRn7fs6MHW7om91-jsOW-kxd4XwLJ7dOyE93s_ivHEZmtSEDQ96gVumtkyMg1GRIAE9XRSXGNggQdkTjXWGgk9LBeeAlth1lgDG4y8NK4MFHekPLly3U8ALpBmgm)
+[![example](https://mermaid.ink/img/pako:eNp1kMsOwiAQRX-FzEpj-wPEZU3c65LNCNOWtIChsDC1_y59WBujrLi558wEepBOEXCQLXZdobHyaIRl6RSuYsdnnrMzeaVtlfJXcfUom20zDRn7fs6MHW7om91-jsOW-kxd4XwLJ7dOyE93s_ivHEZmtSEDQ96gVumtkyMg1GRIAE9XRSXGNggQdkTjXWGgk9LBeeAlth1lgDG4y8NK4MFHekPLly3U8ALpBmgm?type=png)](https://mermaid.live/edit#pako:eNp1kMsOwiAQRX-FzEpj-wPEZU3c65LNCNOWtIChsDC1_y59WBujrLi558wEepBOEXCQLXZdobHyaIRl6RSuYsdnnrMzeaVtlfJXcfUom20zDRn7fs6MHW7om91-jsOW-kxd4XwLJ7dOyE93s_ivHEZmtSEDQ96gVumtkyMg1GRIAE9XRSXGNggQdkTjXWGgk9LBeeAlth1lgDG4y8NK4MFHekPLly3U8ALpBmgm)
 
 ### Building blocks of OOP
 

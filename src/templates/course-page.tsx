@@ -10,10 +10,6 @@ export interface ICourse {
   title: string;
   disabled: boolean;
   squareImage: string;
-  facebookImage: string;
-  twitterImage: string;
-  femCourseUrl: string;
-  femCoursePublished: boolean;
   summary: string;
 }
 
@@ -60,12 +56,7 @@ const CoursePageTemplate: React.FunctionComponent<ICourseTemplateProps> = ({
   const posts = data.allMarkdownRemark.edges;
   return (
     <CourseLayout courses={courses} padTop={false}>
-      <SEO
-        title={course.title}
-        description={course.summary}
-        twitterImage={course.twitterImage}
-        facebookImage={course.facebookImage}
-      />
+      <SEO title={course.title} description={course.summary} />
       <header>
         <img style={{ float: "right", margin: 8 }} width={175} src={course.squareImage} />
         <h1
@@ -137,10 +128,6 @@ export const pageQuery = graphql`
           title
           summary
           squareImage
-          facebookImage
-          twitterImage
-          femCourseUrl
-          femCoursePublished
           disabled
         }
       }
