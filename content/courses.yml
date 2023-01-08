@@ -1,0 +1,22 @@
+- title: "Vanilla Javascript"
+  id: vanilla-javascript
+  disabled: false
+  squareImage: /vanilla-javascript.png
+  summary: Get familiar with the basics of web development. HTML, CSS and JS.
+- title: "Understanding the Javascript Ecosystem"
+  id: js-ecosystem
+  disabled: false
+  squareImage: /ecosystem.png
+  summary: Get an overview of the different tools used to support your development efforts.
+- title: "TypeScript Fundamentals"
+  id: fundamentals-v3
+  disabled: false
+  squareImage: /typescript.png
+  summary:
+    Learn everything you need to know in order to confidently and successfully
+    use TypeScript to build a modern JavaScript app.
+- title: "Big O & Algorithms"
+  id: computer-science
+  disabled: false
+  squareImage: /big-o-notation.jpg
+  summary: Get familiar with Big O and learn how to apply it to different kind of algorithms
