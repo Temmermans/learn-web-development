@@ -16,7 +16,6 @@ module.exports = {
       summary: `, Co-founder of dScribe data and teacher @Syntra.`,
     },
     description: `Learn Web Development with Simon Temmerman`,
-    siteUrl: `https://www.typescript-training.com/`,
     social: {
       linkedin: "simontemmerman",
     },
