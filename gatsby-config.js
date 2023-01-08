@@ -9,7 +9,6 @@ const yaml = require("js-yaml");
 const courses = yaml.load(fs.readFileSync(path.join(PROJECT_ROOT_PATH, "content", "courses.yml"), "utf-8"));
 
 module.exports = {
-  pathPrefix: "/learn-web-development",
   siteMetadata: {
     title: `Learn Web Development`,
     author: {
@@ -17,6 +16,7 @@ module.exports = {
       summary: `, Co-founder of dScribe data and teacher @Syntra.`,
     },
     description: `Learn Web Development with Simon Temmerman`,
+    siteUrl: `https://www.simon-says.com/`,
     social: {
       linkedin: "simontemmerman",
     },

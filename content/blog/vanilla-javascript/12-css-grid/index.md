@@ -4,6 +4,7 @@ date: "2021-06-08T09:00:00.000Z"
 description: |
   Learn how to use CSS to build grid layouts.
 order: 13
+course: vanilla-javascript
 credits: Brian Holt|https://github.com/btholt
 ---
 
