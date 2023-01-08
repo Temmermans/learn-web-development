@@ -9,6 +9,7 @@ const yaml = require("js-yaml");
 const courses = yaml.load(fs.readFileSync(path.join(PROJECT_ROOT_PATH, "content", "courses.yml"), "utf-8"));
 
 module.exports = {
+  pathPrefix: "/learn-web-development",
   siteMetadata: {
     title: `Learn Web Development`,
     author: {
