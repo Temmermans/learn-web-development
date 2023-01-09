@@ -15,8 +15,13 @@
   summary:
     Learn everything you need to know in order to confidently and successfully
     use TypeScript to build a modern JavaScript app.
+- title: "Build APIs with Node.JS"
+  id: build-apis
+  disabled: false
+  squareImage: /build-apis.png
+  summary: Use Node.JS to build APIs that web apps can consume. Learn about different kinds of databases that can be used to stored your applications data.
 - title: "Big O & Algorithms"
   id: computer-science
   disabled: false
-  squareImage: /big-o-notation.jpg
+  squareImage: /algorithms.png
   summary: Get familiar with Big O and learn how to apply it to different kind of algorithms
