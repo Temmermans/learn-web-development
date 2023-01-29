@@ -6,7 +6,7 @@ description: |
   of traditional JavaScript classes. In this unit, we will take a close look
   class fields, access modifier keywords and more!
 course: fundamentals-v3
-order: 10
+order: 11
 credits: Mike North|https://github.com/mike-north
 ---
 

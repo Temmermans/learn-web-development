@@ -6,7 +6,7 @@ description: |
   useful and meaningful names: interfaces and type aliases. We will study both
   concepts in depth, and explain when it makes sense to use each.
 course: fundamentals-v3
-order: 7
+order: 8
 credits: Mike North|https://github.com/mike-north
 ---
 

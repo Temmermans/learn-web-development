@@ -6,7 +6,7 @@ description: |
   type params, and what the language would look like if we didn't have these
   important tools
 course: fundamentals-v3
-order: 16
+order: 17
 credits: Mike North|https://github.com/mike-north
 ---
 

@@ -6,7 +6,7 @@ description: |
   Many of us use array the higher-order functions map, filter and reduce
   quite often. Let's build out similar utilities that operate on dictionaries!
 course: fundamentals-v3
-order: 15
+order: 16
 credits: Mike North|https://github.com/mike-north
 ---
 

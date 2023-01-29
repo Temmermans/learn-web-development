@@ -7,7 +7,7 @@ description: |
   we will dive deep into null, undefined, definite assignment,
   and the non-null assertion operator.
 course: fundamentals-v3
-order: 13
+order: 14
 credits: Mike North|https://github.com/mike-north
 ---
 

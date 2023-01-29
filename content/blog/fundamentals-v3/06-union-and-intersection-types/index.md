@@ -5,7 +5,7 @@ description: |
   We will discuss and explore TypeScript's union and intersection types,
   which are effectively "AND" and "OR" boolean logic operators for types.
 course: fundamentals-v3
-order: 6
+order: 7
 credits: Mike North|https://github.com/mike-north
 ---
 

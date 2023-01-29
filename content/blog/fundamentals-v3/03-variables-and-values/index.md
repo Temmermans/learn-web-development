@@ -5,7 +5,7 @@ description: |
   We will begin our study of the TypeScript language with simple variables
   and functions.
 course: fundamentals-v3
-order: 3
+order: 4
 credits: Mike North|https://github.com/mike-north
 ---
 

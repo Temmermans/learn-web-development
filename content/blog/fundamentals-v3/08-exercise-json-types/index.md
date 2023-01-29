@@ -6,7 +6,7 @@ description: |
   We will take on our first challenge together: defining types
   that describe any valid JSON value
 course: fundamentals-v3
-order: 8
+order: 9
 credits: Mike North|https://github.com/mike-north
 ---
 

@@ -5,7 +5,7 @@ isExercise: true
 description: |
   Let's build a simple JSX parser to dymystify how tools like webpack work.
 course: js-ecosystem
-stackBlitzUrl: https://stackblitz.com/edit/node-ntrjkd?file=index.js
+codeSandBoxUrl: https://stackblitz.com/edit/node-ntrjkd?file=index.js
 order: 2
 ---
 

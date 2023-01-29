@@ -31,7 +31,7 @@ interface ICourseTemplateProps {
             course: string;
             date: string;
             isExercise: boolean;
-            stackBlitzUrl: string;
+            codeSandBoxUrl: string;
             order: number;
             description: string;
           };
@@ -74,7 +74,7 @@ const CoursePageTemplate: React.FunctionComponent<ICourseTemplateProps> = ({
         .sort((a, b) => a.node.frontmatter.order - b.node.frontmatter.order)
         .map(({ node }, idx) => {
           const title = node.frontmatter.title || node.fields.slug;
-          const { isExercise, stackBlitzUrl } = node.frontmatter;
+          const { isExercise, codeSandBoxUrl } = node.frontmatter;
           return (
             <article className={"course-article" + (isExercise ? " exercise" : "")} key={node.fields.slug}>
               <header>
@@ -88,11 +88,11 @@ const CoursePageTemplate: React.FunctionComponent<ICourseTemplateProps> = ({
                     <span className="course-article__title">{title}</span>
                   </Link>
                 </h3>
-                {stackBlitzUrl ? (
+                {codeSandBoxUrl ? (
                   <small className="course-article__date">
                     Fork it on{" "}
-                    <a href={stackBlitzUrl} target="_blank">
-                      StackBlitz
+                    <a href={codeSandBoxUrl} target="_blank">
+                      CodeSandbox
                     </a>
                   </small>
                 ) : null}
@@ -144,7 +144,7 @@ export const pageQuery = graphql`
             title
             order
             isExercise
-            stackBlitzUrl
+            codeSandBoxUrl
             course
             description
           }

@@ -6,7 +6,7 @@ description: |
   are a few more in-depth features we need to cover, including
   multiple function heads and callable types.
 course: fundamentals-v3
-order: 9
+order: 10
 credits: Mike North|https://github.com/mike-north
 ---
 

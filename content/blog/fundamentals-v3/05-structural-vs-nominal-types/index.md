@@ -5,7 +5,7 @@ description: |
   In this unit, we will explore how TypeScript is fundamentally different from
   nominal type systems, such as the ones found in Java and C++.
 course: fundamentals-v3
-order: 5
+order: 6
 credits: Mike North|https://github.com/mike-north
 ---
 

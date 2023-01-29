@@ -6,7 +6,7 @@ description: |
   but there's a lot more power in type guards, including the ability
   to define your own!
 course: fundamentals-v3
-order: 12
+order: 13
 credits: Mike North|https://github.com/mike-north
 ---
 

@@ -5,7 +5,7 @@ isExercise: true
 description: |
   Learn how testing with jest work to automate finding bugs and improve the resiliency of your code.
 course: js-ecosystem
-stackBlitzUrl: https://stackblitz.com/edit/node-jmuq2j?embed=1&file=index.test.js&view=editor
+codeSandBoxUrl: https://stackblitz.com/edit/node-jmuq2j?embed=1&file=index.test.js&view=editor
 order: 4
 ---
 

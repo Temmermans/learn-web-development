@@ -5,7 +5,7 @@ description: |
   Now that we know how to type simple variables and functions, let's make things
   a bit more interesting with collections: in JavaScript this includes Objects and Arrays.
 course: fundamentals-v3
-order: 4
+order: 5
 credits: Mike North|https://github.com/mike-north
 ---
 

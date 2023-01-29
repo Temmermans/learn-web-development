@@ -5,7 +5,7 @@ description: |
   Generics allow us to parameterize types, which unlocks great opportunity
   to reuse types broadly across a TypeScript project.
 course: fundamentals-v3
-order: 14
+order: 15
 credits: Mike North|https://github.com/mike-north
 ---
 
