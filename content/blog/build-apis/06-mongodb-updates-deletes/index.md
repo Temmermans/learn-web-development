@@ -3,7 +3,7 @@ title: NoSQL - MongoDB Updates and Deletes
 date: "2021-06-08T09:00:00.000Z"
 description: Build a CRUD API using express.js and MongoDB.
 course: build-apis
-order: 6
+order: 7
 ---
 
 # Updating MongoDB

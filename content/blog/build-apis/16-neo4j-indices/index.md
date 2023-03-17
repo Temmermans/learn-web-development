@@ -3,7 +3,7 @@ title: Neo4j Indices
 date: "2021-06-08T09:00:00.000Z"
 description: Build a CRUD API using express.js and MongoDB.
 course: build-apis
-order: 16
+order: 17
 ---
 
 Just as with PostgreSQL and MongoDB, frequently having an index becomes very important to query performance for your "hot paths" for your database querying habits.
