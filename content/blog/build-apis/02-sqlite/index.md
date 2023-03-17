@@ -3,7 +3,7 @@ title: SQLite
 date: "2021-06-08T09:00:00.000Z"
 description: Build APIs with Node.JS - SQLite
 course: build-apis
-order: 2
+order: 3
 ---
 
 ## SQLite
