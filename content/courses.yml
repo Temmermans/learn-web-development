@@ -1,3 +1,8 @@
+- title: "Working with GIT"
+  id: git
+  disabled: false
+  squareImage: /git.png
+  summary: Get familiar with GIT and how it can help you boost your workflow.
 - title: "Vanilla Javascript"
   id: vanilla-javascript
   disabled: false
