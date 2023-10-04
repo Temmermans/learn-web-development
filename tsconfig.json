@@ -6,7 +6,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitAny": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
   },
   "include": ["global.d.ts", "src"],
   "exclude": ["exercises"]

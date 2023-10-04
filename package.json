@@ -5,6 +5,11 @@
   "version": "0.0.1",
   "author": "Simon Temmerman",
   "dependencies": {
+    "@codemirror/autocomplete": "^6.9.1",
+    "@codesandbox/sandpack-react": "^2.8.0",
+    "@codesandbox/sandpack-themes": "^2.0.21",
+    "alea": "^1.0.1",
+    "firebase": "^10.4.0",
     "gatsby": "^3.1.2",
     "gatsby-image": "^3.1.0",
     "gatsby-plugin-feed": "^3.1.0",

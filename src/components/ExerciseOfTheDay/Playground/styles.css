@@ -1,0 +1,106 @@
+.container {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 0.5fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  height: 100vh;
+  grid-template-areas:
+    "Header Header Header Header"
+    "History Explanation Explanation Explanation"
+    "History Code-Area Code-Area Code-Area"
+    "History Code-Area Code-Area Code-Area";
+}
+
+.Header {
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  grid-area: Header;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0;
+}
+
+.signout {
+  cursor: pointer;
+  border: 0;
+  border-radius: 15px;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: 0.4s;
+  color: rgb(104, 85, 224);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(104, 85, 224, 1);
+  padding: 0 10px;
+}
+
+.email {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.History {
+  grid-area: History;
+  background: white;
+  margin: 0 15px 15px 15px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.History h3 {
+  margin: 0;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.Explanation {
+  grid-area: Explanation;
+  padding: 10px;
+  display: flex;
+}
+
+.Explanation h3,
+p,
+span {
+  margin: 0;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.Explanation .controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+
+.Explanation .controls button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 15px;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: 0.4s;
+  color: rgb(104, 85, 224);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(104, 85, 224, 1);
+  padding: 0 10px;
+}
+
+.Code-Area {
+  grid-area: Code-Area;
+  padding: 15px;
+}
+
+.Code-Area span {
+  margin: 0;
+}
