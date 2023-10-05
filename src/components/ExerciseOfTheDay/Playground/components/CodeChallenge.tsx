@@ -11,7 +11,6 @@ import React, { FC, useEffect, useState } from "react";
 import Firestore from "../../../../utils/Firestore";
 import DifficultyBadge from "../../DifficultyBadge";
 import { ExerciseOfTheDay } from "../../types";
-
 const CodeChallenge: FC = () => {
   const [exercise, setExercise] = useState<ExerciseOfTheDay | null>(null);
 
@@ -35,7 +34,16 @@ const CodeChallenge: FC = () => {
         </section>
         <section className="controls">
           <button>Mark as complete</button>
-          <button>Next Exercise</button>
+          <button
+            onClick={() => {
+              const time = new Date().getTime();
+              Firestore.getExerciseOfTheDay(time).then((exerciseOfTheDay) => {
+                setExercise(exerciseOfTheDay);
+              });
+            }}
+          >
+            Random Exercise
+          </button>
         </section>
       </div>
       <div className="Code-Area">
@@ -47,7 +55,7 @@ const CodeChallenge: FC = () => {
           //     externalResources: [],
           //   }}
           files={{
-            "excercise.js": {
+            "exercise.js": {
               code: exercise["Initial Code"],
               active: true,
             },

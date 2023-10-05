@@ -8,14 +8,14 @@ import {
   getCountFromServer,
   getDoc,
   getDocs,
-  limit,
   or,
   orderBy,
   query,
   setDoc,
-  startAt,
   where,
 } from "firebase/firestore";
+import parserBabel from "prettier/parser-babel";
+import * as prettier from "prettier/standalone";
 import { ExerciseOfTheDay, User } from "../components/ExerciseOfTheDay/types";
 import { db } from "./firebase";
 
@@ -35,6 +35,14 @@ export default class Firestore {
     return time - (time % 86400000);
   }
 
+  private static async formatCode(code: string) {
+    return prettier.format(code, {
+      semi: false,
+      parser: "babel",
+      plugins: [parserBabel],
+    });
+  }
+
   public static async getUserHistory(currentUser: User | null): Promise<ExerciseOfTheDay[]> {
     if (!currentUser) return [];
     const history = currentUser?.practiceHistory.map((e) => e.exerciseRef.path);
@@ -47,13 +55,26 @@ export default class Firestore {
     return this.snapshotToArray<ExerciseOfTheDay>(snapshot);
   }
 
-  public static async getExerciseOfTheDay(): Promise<ExerciseOfTheDay> {
+  public static getExerciseOfTheDay(n?: number): Promise<ExerciseOfTheDay> {
     return getCountFromServer(this.exerciseOfTheDayRef).then((snapshot) => {
-      const arng = new (Alea as any)(this.dateToEpoch());
+      const arng = new (Alea as any)(n || this.dateToEpoch());
       const rand = Math.ceil(arng() * snapshot.data().count);
-      const q = query(this.exerciseOfTheDayRef, orderBy("Exercise Name"), startAt(rand), limit(1));
+      const q = query(this.exerciseOfTheDayRef, orderBy("Exercise Name"));
       return getDocs(q).then((querySnapshot) => {
-        return this.snapshotToArray<ExerciseOfTheDay>(querySnapshot)[0];
+        // any way to avoid fetching all the data?
+        const exercise = querySnapshot.docs[rand].data() as ExerciseOfTheDay;
+        return Promise.all([
+          this.formatCode(exercise["Initial Code"]),
+          this.formatCode(exercise["Jest Test Code"]),
+          this.formatCode(exercise["Solution Code"]),
+        ]).then(([initialCode, jestTestCode, solutionCode]) => {
+          return {
+            ...exercise,
+            "Initial Code": initialCode,
+            "Jest Test Code": jestTestCode,
+            "Solution Code": solutionCode,
+          };
+        });
       });
     });
   }
@@ -67,7 +88,6 @@ export default class Firestore {
           practiceHistory: docSnap.data()?.practiceHistory,
         };
       } else {
-        console.log("Document data:", docSnap.data());
         return setDoc(path, {
           email: user.email,
           practiceHistory: [],
