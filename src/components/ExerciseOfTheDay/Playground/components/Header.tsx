@@ -11,7 +11,7 @@ const Header: FC = () => {
       {currentUser?.photoURL && <img className="profile-picture" src={currentUser?.photoURL} />}
       <section>
         <p className="email">{currentUser?.displayName}</p>
-        <p className="email">Exercises done: {currentUser?.practiceHistory.length}</p>
+        <p className="email">Exercises done: {currentUser?.practiceHistory?.length}</p>
       </section>
       <button className="signout" onClick={async () => await signOut(auth)}>
         Log out

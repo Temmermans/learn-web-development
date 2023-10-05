@@ -1,9 +1,9 @@
 import { onAuthStateChanged } from "firebase/auth";
-import { Unsubscribe, doc, onSnapshot } from "firebase/firestore";
+import { Unsubscribe, collection, onSnapshot } from "firebase/firestore";
 import React, { FC, createContext, useContext, useEffect, useState } from "react";
 import Firestore from "../utils/Firestore";
 import { auth, db } from "../utils/firebase";
-import { AuthContext as IAuthContext, User } from "./ExerciseOfTheDay/types";
+import { AuthContext as IAuthContext, PracticeHistory, User } from "./ExerciseOfTheDay/types";
 
 const defaultContext: IAuthContext = {
   currentUser: null,
@@ -25,10 +25,10 @@ const AuthProvider: FC = ({ children }) => {
           const currentUserInDb = await Firestore.getCurrentUser(user);
           setCurrentUser(currentUserInDb);
 
-          unsub = onSnapshot(doc(db, "users", user.email!), (doc) => {
+          unsub = onSnapshot(collection(db, "users", user.email!, "history"), (doc) => {
             setCurrentUser({
               ...user,
-              practiceHistory: doc.data()?.practiceHistory,
+              practiceHistory: doc.docs.map((e) => ({ ...e.data(), name: e.id })) as PracticeHistory[],
             });
           });
 

@@ -1,5 +1,4 @@
 import type { User as FirebaseUser } from "firebase/auth";
-import { DocumentReference } from "firebase/firestore";
 
 export interface ExerciseOfTheDay {
   "Exercise Name": string;
@@ -12,9 +11,10 @@ export interface ExerciseOfTheDay {
 }
 
 export interface PracticeHistory {
+  name: string;
   lastUpdate: string;
-  writtenCode: string;
-  exerciseRef: DocumentReference;
+  codeWritten: string;
+  complete: boolean;
 }
 
 export type User = FirebaseUser & { practiceHistory: PracticeHistory[] };

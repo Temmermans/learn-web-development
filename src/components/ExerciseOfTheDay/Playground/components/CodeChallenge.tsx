@@ -1,24 +1,18 @@
-import { autocompletion, completionKeymap } from "@codemirror/autocomplete";
-import {
-  SandpackCodeEditor,
-  SandpackConsole,
-  SandpackLayout,
-  SandpackProvider,
-  SandpackTests,
-} from "@codesandbox/sandpack-react";
+import { SandpackLayout, SandpackProvider } from "@codesandbox/sandpack-react";
 import { cobalt2 } from "@codesandbox/sandpack-themes";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import Firestore from "../../../../utils/Firestore";
+import { useAuth } from "../../../AuthContext";
 import DifficultyBadge from "../../DifficultyBadge";
 import { ExerciseOfTheDay } from "../../types";
-const CodeChallenge: FC = () => {
-  const [exercise, setExercise] = useState<ExerciseOfTheDay | null>(null);
+import CodeEditor from "./CodeEditor";
 
-  useEffect(() => {
-    Firestore.getExerciseOfTheDay().then((exerciseOfTheDay) => {
-      setExercise(exerciseOfTheDay);
-    });
-  }, []);
+const CodeChallenge: FC<{ exercise: ExerciseOfTheDay; setExercise: (exercise: ExerciseOfTheDay) => void }> = ({
+  exercise,
+  setExercise,
+}) => {
+  const { currentUser } = useAuth();
+  const userExerciseHistory = currentUser?.practiceHistory.find((e) => e.name === exercise?.["Exercise Name"]);
 
   if (!exercise) return null;
 
@@ -33,7 +27,7 @@ const CodeChallenge: FC = () => {
           <span>Expected Output: {exercise?.["Expected Output"]}</span>
         </section>
         <section className="controls">
-          <button>Mark as complete</button>
+          <span>Status: {userExerciseHistory?.complete ? "Complete" : "Not Completed"}</span>
           <button
             onClick={() => {
               const time = new Date().getTime();
@@ -56,7 +50,7 @@ const CodeChallenge: FC = () => {
           //   }}
           files={{
             "exercise.js": {
-              code: exercise["Initial Code"],
+              code: userExerciseHistory?.codeWritten || exercise["Initial Code"],
               active: true,
             },
             "solution.js": {
@@ -69,15 +63,7 @@ const CodeChallenge: FC = () => {
           theme={cobalt2}
         >
           <SandpackLayout>
-            <SandpackCodeEditor
-              extensions={[autocompletion()]}
-              extensionsKeymap={[completionKeymap] as any}
-              showLineNumbers
-              closableTabs
-              showTabs
-            />
-            <SandpackConsole showSyntaxError standalone />
-            <SandpackTests />
+            <CodeEditor exercise={exercise} />
           </SandpackLayout>
         </SandpackProvider>
       </div>
