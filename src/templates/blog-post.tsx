@@ -1,14 +1,13 @@
+import { Link, graphql } from "gatsby";
 import * as React from "react";
 import { useEffect } from "react";
-import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 
-import { ICourse } from "./course-page";
 import setupTwoslashHovers from "../utils/setup-two-slash";
+import { ICourse } from "./course-page";
 
 interface IPost {
   tableOfContents: string;
@@ -184,7 +183,6 @@ const BlogPostTemplate: React.FunctionComponent<IBlogPostTemplateProps> = ({ dat
         />
         <footer>
           {credits}
-          <Bio />
         </footer>
       </article>
     </Layout>

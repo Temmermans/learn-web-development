@@ -1,12 +1,9 @@
 const fs = require(`fs`);
 const path = require(`path`);
 
-const PACKAGE_JSON_PATH = require("pkg-up").sync();
-const PROJECT_ROOT_PATH = path.join(PACKAGE_JSON_PATH, "..");
-
 const yaml = require("js-yaml");
 
-const courses = yaml.load(fs.readFileSync(path.join(PROJECT_ROOT_PATH, "content", "courses.yml"), "utf-8"));
+const courses = yaml.load(fs.readFileSync(path.join(__dirname, "content", "courses.yml"), "utf-8"));
 
 module.exports = {
   siteMetadata: {
@@ -121,7 +118,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
     },
-    `gatsby-plugin-feed`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {

@@ -1,10 +1,11 @@
-import * as React from "react";
 import { Link } from "gatsby";
+import * as React from "react";
 import { ICourse } from "../templates/course-page";
 
 import { rhythm } from "../utils/typography";
 
 interface ICourseLayoutProps {
+  children: JSX.Element;
   courses: ICourse[];
   padTop: boolean;
 }

@@ -14,7 +14,7 @@ const defaultContext: IAuthContext = {
 export const AuthContext = createContext(defaultContext);
 export const useAuth = (): IAuthContext => useContext(AuthContext);
 
-const AuthProvider: FC = ({ children }) => {
+const AuthProvider: FC<{ children: JSX.Element }> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   useEffect(() => {

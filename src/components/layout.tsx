@@ -1,9 +1,10 @@
-import * as React from "react";
 import { Link } from "gatsby";
+import * as React from "react";
 
 import { rhythm, scale } from "../utils/typography";
 
 interface ILayoutProps {
+  children: React.ReactNode;
   location: {
     pathname: string;
   };
@@ -16,46 +17,54 @@ const Layout: React.FunctionComponent<ILayoutProps> = ({ location, title, childr
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
+      <>
+        <h1
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+            marginTop: 0,
           }}
-          to={`/`}
         >
-          {title}
+          <Link
+            style={{
+              boxShadow: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h1>
+        <Link to="/exercise-of-the-day">
+          <button className="exercise-of-the-day-button">Exercise of the day</button>
         </Link>
-      </h1>
+      </>
     );
   } else {
     header = (
-      <h3
-        style={{
-          marginTop: 0,
-        }}
-      >
-        <Link
+      <>
+        <h3
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            marginTop: 0,
           }}
-          to={`/`}
         >
-          {title}
-        </Link>
-      </h3>
+          <Link
+            style={{
+              boxShadow: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h3>
+      </>
     );
   }
   return (
     <div
       style={{
+        position: "relative",
         marginLeft: `auto`,
         marginRight: `auto`,
         maxWidth: rhythm(30),
@@ -63,6 +72,7 @@ const Layout: React.FunctionComponent<ILayoutProps> = ({ location, title, childr
       }}
     >
       <header>{header}</header>
+
       <main>{children}</main>
     </div>
   );

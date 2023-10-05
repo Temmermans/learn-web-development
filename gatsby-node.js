@@ -3,9 +3,6 @@ const path = require(`path`);
 const { groupBy, sortBy } = require(`lodash`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const yaml = require("js-yaml");
-const PACKAGE_JSON_PATH = require("pkg-up").sync();
-
-const PROJECT_ROOT_PATH = path.join(PACKAGE_JSON_PATH, "..");
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
@@ -23,7 +20,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const ymlDoc = yaml.load(fs.readFileSync(path.join(PROJECT_ROOT_PATH, "content", "courses.yml"), "utf-8"));
+  const ymlDoc = yaml.load(fs.readFileSync(path.join(__dirname, "content", "courses.yml"), "utf-8"));
   ymlDoc.forEach((element) => {
     console.log(`Creating page: ${element.id}`);
     createPage({

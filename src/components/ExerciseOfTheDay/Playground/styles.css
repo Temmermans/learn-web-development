@@ -68,8 +68,8 @@
 }
 
 .Explanation h3,
-p,
-span {
+.Explanation p,
+.Explanation span {
   margin: 0;
   margin-top: 15px;
   margin-left: 15px;

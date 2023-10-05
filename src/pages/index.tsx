@@ -1,5 +1,5 @@
-import * as React from "react";
 import { Link, graphql } from "gatsby";
+import * as React from "react";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
@@ -90,7 +90,6 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC }) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
