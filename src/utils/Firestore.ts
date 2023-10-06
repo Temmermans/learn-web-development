@@ -19,8 +19,6 @@ import { ExerciseOfTheDay, PracticeHistory, User } from "../components/ExerciseO
 import { db } from "./firebase";
 
 export default class Firestore {
-  private static exerciseOfTheDayRef = collection(db, "exercise-of-the-day");
-
   private static dateToEpoch() {
     const time = new Date().getTime();
     return time - (time % 86400000);
@@ -53,10 +51,10 @@ export default class Firestore {
   }
 
   public static getExerciseOfTheDay(n?: number): Promise<ExerciseOfTheDay> {
-    return getCountFromServer(this.exerciseOfTheDayRef).then((snapshot) => {
+    return getCountFromServer(collection(db, "exercise-of-the-day")).then((snapshot) => {
       const arng = new (Alea as any)(n || this.dateToEpoch());
       const rand = Math.ceil(arng() * snapshot.data().count);
-      const q = query(this.exerciseOfTheDayRef, orderBy("Exercise Name"));
+      const q = query(collection(db, "exercise-of-the-day"), orderBy("Exercise Name"));
       return getDocs(q).then((querySnapshot) => {
         // any way to avoid fetching all the data?
         const exercise = (

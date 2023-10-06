@@ -95,35 +95,5 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
-        queries: [
-          {
-            query: `
-            query {
-              pages: allSitePage {
-                nodes {
-                  # querying id is required
-                  id
-                  component
-                  path
-                  componentChunkName
-                  internal {
-                    # querying internal.contentDigest is required
-                    contentDigest
-                    type
-                  }
-                }
-              }
-            }
-          `,
-          },
-        ],
-      },
-    },
   ],
 };
