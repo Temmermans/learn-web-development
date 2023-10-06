@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const fs = require(`fs`);
 const path = require(`path`);
 
@@ -6,6 +8,9 @@ const yaml = require("js-yaml");
 const courses = yaml.load(fs.readFileSync(path.join(__dirname, "content", "courses.yml"), "utf-8"));
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `Learn Web Development`,
     author: {
@@ -28,13 +33,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -43,33 +41,6 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1000,
-            },
-          },
-          {
-            resolve: "gatsby-remark-custom-blocks",
-            options: {
-              blocks: {
-                danger: {
-                  classes: "danger",
-                  title: "required",
-                },
-                info: {
-                  classes: "info",
-                  title: "optional",
-                },
-                warning: {
-                  classes: "warning",
-                  title: "optional",
-                },
-                question: {
-                  classes: "question",
-                  title: "optional",
-                },
-                vspace: {
-                  classes: "vspace",
-                  title: "optional",
-                },
-              },
             },
           },
           {
@@ -114,20 +85,45 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-sharp`,
     },
     `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        queries: [
+          {
+            query: `
+            query {
+              pages: allSitePage {
+                nodes {
+                  # querying id is required
+                  id
+                  component
+                  path
+                  componentChunkName
+                  internal {
+                    # querying internal.contentDigest is required
+                    contentDigest
+                    type
+                  }
+                }
+              }
+            }
+          `,
+          },
+        ],
+      },
+    },
   ],
 };

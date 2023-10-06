@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-const DifficultyBadge: FC = ({ children }) => {
+const DifficultyBadge: FC<{ children: JSX.Element | string | number }> = ({ children }) => {
   return (
     <span
       style={{

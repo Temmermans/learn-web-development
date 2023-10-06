@@ -5,7 +5,7 @@ import { ICourse } from "../templates/course-page";
 import { rhythm } from "../utils/typography";
 
 interface ICourseLayoutProps {
-  children: JSX.Element;
+  children: JSX.Element | React.ReactNode;
   courses: ICourse[];
   padTop: boolean;
 }

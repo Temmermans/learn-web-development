@@ -1,6 +1,5 @@
+import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Image, { FixedObject } from "gatsby-image";
 
 import { rhythm } from "../utils/typography";
 
@@ -13,14 +12,9 @@ interface IPureBioProps {
     twitter: string;
     linkedin: string;
   };
-  avatar: {
-    childImageSharp: {
-      fixed: FixedObject;
-    };
-  };
 }
 
-const PureBio: React.FunctionComponent<IPureBioProps> = ({ author, social, avatar }) => {
+const PureBio: React.FunctionComponent<IPureBioProps> = ({ author, social }) => {
   return (
     <div
       style={{
@@ -28,16 +22,13 @@ const PureBio: React.FunctionComponent<IPureBioProps> = ({ author, social, avata
         marginBottom: rhythm(2.5),
       }}
     >
-      <Image
-        fixed={avatar.childImageSharp.fixed}
+      <img
         alt={author.name}
+        src="profile-pic.png"
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
+          width: 120,
           borderRadius: `50%`,
         }}
       />
@@ -57,13 +48,6 @@ const PureBio: React.FunctionComponent<IPureBioProps> = ({ author, social, avata
 const Bio = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
-        childImageSharp {
-          fixed(width: 125, height: 125) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       site {
         siteMetadata {
           author {
@@ -79,8 +63,8 @@ const Bio = (): JSX.Element => {
   `);
 
   const { author, social } = data.site.siteMetadata;
-  return <PureBio author={author} social={social} avatar={data.avatar} />;
+  return <PureBio author={author} social={social} />;
 };
 
 export default Bio;
-export { PureBio, IPureBioProps };
+export { IPureBioProps, PureBio };

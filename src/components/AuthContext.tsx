@@ -8,6 +8,7 @@ import { AuthContext as IAuthContext, PracticeHistory, User } from "./ExerciseOf
 const defaultContext: IAuthContext = {
   currentUser: null,
   loading: true,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setCurrentUser: null as any,
 };
 

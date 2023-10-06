@@ -3,7 +3,6 @@ import * as React from "react";
 import { useEffect } from "react";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 
 import setupTwoslashHovers from "../utils/setup-two-slash";
@@ -89,8 +88,6 @@ const BlogPostTemplate: React.FunctionComponent<IBlogPostTemplateProps> = ({ dat
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
-
       <article className="blog-post">
         <header>
           <Link
@@ -181,9 +178,7 @@ const BlogPostTemplate: React.FunctionComponent<IBlogPostTemplateProps> = ({ dat
             marginBottom: rhythm(1),
           }}
         />
-        <footer>
-          {credits}
-        </footer>
+        <footer>{credits}</footer>
       </article>
     </Layout>
   );

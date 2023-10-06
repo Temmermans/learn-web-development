@@ -37,27 +37,25 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC }, limit: 1000) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                order
-                course
-                isExercise
-              }
+  const result = await graphql(`
+    {
+      allMarkdownRemark(sort: { frontmatter: { order: ASC } }, limit: 1000) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              order
+              course
+              isExercise
             }
           }
         }
       }
-    `
-  );
+    }
+  `);
 
   if (result.errors) {
     throw result.errors;

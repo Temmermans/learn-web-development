@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { autocompletion, completionKeymap } from "@codemirror/autocomplete";
 import { SandpackCodeEditor, SandpackTests, useSandpack } from "@codesandbox/sandpack-react";
 import React, { FC, useEffect } from "react";

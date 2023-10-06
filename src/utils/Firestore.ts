@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Alea from "alea";
 import type { User as FirebaseUser } from "firebase/auth";
 import {
@@ -28,7 +29,7 @@ export default class Firestore {
   private static async formatCode(code: string) {
     return prettier.format(code, {
       parser: "babel",
-      plugins: [babel, estree]
+      plugins: [babel, estree],
     });
   }
 

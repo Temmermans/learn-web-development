@@ -3,7 +3,6 @@ import * as React from "react";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 import { rhythm } from "../utils/typography";
 
 interface IBlogIndexProps {
@@ -35,6 +34,15 @@ interface IBlogIndexProps {
   };
 }
 
+export function Head() {
+  return (
+    <>
+      <title>Simon Says - Learn web development</title>
+      <meta name="description" content="Learn web development" />
+    </>
+  );
+}
+
 const BlogIndex: React.FunctionComponent<IBlogIndexProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const courses = data.site.siteMetadata.courses;
@@ -42,7 +50,6 @@ const BlogIndex: React.FunctionComponent<IBlogIndexProps> = ({ data, location })
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Courses" />
       <Bio />
       {courses
         .filter((c) => !c.disabled)
@@ -87,7 +94,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC }) {
+    allMarkdownRemark(sort: { frontmatter: { order: ASC } }) {
       edges {
         node {
           fields {

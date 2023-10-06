@@ -1,8 +1,6 @@
 import { Link, graphql } from "gatsby";
 import * as React from "react";
-import Bio from "../components/bio";
 import CourseLayout from "../components/course-layout";
-import SEO from "../components/seo";
 import { rhythm } from "../utils/typography";
 
 export interface ICourse {
@@ -56,7 +54,6 @@ const CoursePageTemplate: React.FunctionComponent<ICourseTemplateProps> = ({
   const posts = data.allMarkdownRemark.edges;
   return (
     <CourseLayout courses={courses} padTop={false}>
-      <SEO title={course.title} description={course.summary} />
       <header>
         <img style={{ float: "right", margin: 8 }} width={175} src={course.squareImage} />
         <h1
@@ -108,10 +105,6 @@ const CoursePageTemplate: React.FunctionComponent<ICourseTemplateProps> = ({
             </article>
           );
         })}
-
-      <footer>
-        <Bio />
-      </footer>
     </CourseLayout>
   );
 };
@@ -132,7 +125,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+    allMarkdownRemark(sort: { frontmatter: { date: ASC } }) {
       edges {
         node {
           fields {
