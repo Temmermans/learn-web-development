@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import * as React from "react";
 
 import { rhythm, scale } from "../utils/typography";
+import Search from "./search";
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -35,9 +36,6 @@ const Layout: React.FunctionComponent<ILayoutProps> = ({ location, title, childr
             {title}
           </Link>
         </h1>
-        <Link to="/exercise-of-the-day">
-          <button className="exercise-of-the-day-button">Exercise of the day</button>
-        </Link>
       </>
     );
   } else {
@@ -62,19 +60,26 @@ const Layout: React.FunctionComponent<ILayoutProps> = ({ location, title, childr
     );
   }
   return (
-    <div
-      style={{
-        position: "relative",
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(30),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
-
-      <main>{children}</main>
-    </div>
+    <>
+      <section id="layout-header">
+        <Search />
+        <Link to="/exercise-of-the-day">
+          <button className="exercise-of-the-day-button">Exercise of the day</button>
+        </Link>
+      </section>
+      <div
+        style={{
+          position: "relative",
+          marginLeft: `auto`,
+          marginRight: `auto`,
+          maxWidth: rhythm(30),
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        }}
+      >
+        <header>{header}</header>
+        <main>{children}</main>
+      </div>
+    </>
   );
 };
 

@@ -95,5 +95,48 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: "gatsby-plugin-local-search",
+      options: {
+        // A unique name for the search index. This should be descriptive of
+        // what the index contains. This is required.
+        name: "pages",
+
+        // Set the search engine to create the index. This is required.
+        // The following engines are supported: flexsearch, lunr
+        engine: "flexsearch",
+
+        query: `
+          {
+            allMarkdownRemark {
+              nodes {
+                id
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  course
+                }
+                rawMarkdownBody
+              }
+            }
+          }
+        `,
+
+        // Function used to map the result from the GraphQL query. This should
+        // return an array of items to index in the form of flat objects
+        // containing properties to index. The objects must contain the `ref`
+        // field above (default: 'id'). This is required.
+        normalizer: ({ data }) =>
+          data.allMarkdownRemark.nodes.map((node) => ({
+            id: node.id,
+            path: node.fields.slug,
+            title: node.frontmatter.title,
+            course: node.frontmatter.course,
+            body: node.rawMarkdownBody,
+          })),
+      },
+    },
   ],
 };
