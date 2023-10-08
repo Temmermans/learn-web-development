@@ -75,10 +75,10 @@ const BlogPostTemplate: React.FunctionComponent<IBlogPostTemplateProps> = ({ dat
   const credits = post.frontmatter.credits ? (
     <p>
       All credits to creator of content before I tweaked it a bit:{" "}
-      {post.frontmatter.credits.split(",").map((c) => {
+      {post.frontmatter.credits.split(",").map((c, i) => {
         const [name, url] = c.split("|");
         return (
-          <a target="_blank" href={url}>
+          <a target="_blank" key={`${i}-${url}`} href={url}>
             {name}
           </a>
         );

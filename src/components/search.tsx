@@ -53,7 +53,13 @@ const Query: FC<{ index: string; store: Record<string, unknown> }> = ({ index, s
                 return `... ${replaced} ...`;
               })
               .map((html, i) => {
-                return <p className="text-search-highlight" key={i} dangerouslySetInnerHTML={{ __html: html }}></p>;
+                return (
+                  <p
+                    className="text-search-highlight"
+                    key={`${i}-${html}`}
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  ></p>
+                );
               });
 
             return (

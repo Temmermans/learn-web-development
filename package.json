@@ -35,7 +35,8 @@
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13",
     "typography": "0.16.24",
-    "typography-theme-wordpress-2016": "0.16.19"
+    "typography-theme-wordpress-2016": "0.16.19",
+    "unist-util-visit": "^2.0.3"
   },
   "devDependencies": {
     "@types/jest": "29.5.5",

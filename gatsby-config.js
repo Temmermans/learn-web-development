@@ -82,6 +82,7 @@ module.exports = {
               },
             },
           },
+          `gatsby-remark-custom-blocks`,
         ],
       },
     },

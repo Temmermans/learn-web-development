@@ -80,6 +80,23 @@ Bind keys to audio sounds and create a digital drum kit:
 
 <iframe src="https://stackblitz.com/edit/js-mccsy3?embed=1&file=index.js&view=editor"></iframe>
 
+## Display Products
+
+You have been given a list of products with their details, such as name, price, and category. You're tasked with creating a webpage that allows users to filter products based on a price threshold, transform the product names to uppercase, and finally display the total price of the filtered products.
+
+<iframe src="https://stackblitz.com/edit/js-5gzcvd?file=index.js&view=editor"></iframe>
+
+## Interactive Task Management Tool
+
+You are building a simple task management tool. Users should be able to:
+
+1. Add new tasks.
+2. Mark tasks as completed.
+3. Filter tasks to view either all, completed, or pending tasks.
+4. See the number of tasks completed and the average length of the task descriptions.
+
+<iframe src="https://stackblitz.com/edit/js-t8m2fm?file=index.js&view=editor"></iframe>
+
 ## Fun with Promises
 
 Build a little guessing game where you can enter a number and see if it is the correct one!
