@@ -19,7 +19,7 @@ const Login: FC = () => {
           }
         }}
       >
-        <img src="./google.png" />
+        <img src="/google.png" />
         Google
       </button>
       <button
@@ -34,7 +34,7 @@ const Login: FC = () => {
           }
         }}
       >
-        <img src="./github.png" />
+        <img src="/github.png" />
         Github
       </button>
     </section>
