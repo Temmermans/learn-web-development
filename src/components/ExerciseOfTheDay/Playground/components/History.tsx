@@ -1,27 +1,36 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Firestore from "../../../../utils/Firestore";
 import { useAuth } from "../../../AuthContext";
 import { ExerciseOfTheDay } from "../../types";
+import Card from "./Card";
 
-const History: FC<{ setExercise: (exercise: ExerciseOfTheDay) => void }> = ({ setExercise }) => {
+const History: FC<{
+  setExercise: (exercise: ExerciseOfTheDay) => void;
+}> = ({ setExercise }) => {
   const { currentUser } = useAuth();
+  const [selectedCard, setselectedCard] = useState<number | null>(null);
 
   return (
     <div className="History">
-      <h3>History</h3>
-      {currentUser?.practiceHistory.map((e) => (
-        <div
+      <div style={{ marginBottom: 15 }}>
+        <b>History</b>
+      </div>
+      {currentUser?.practiceHistory.map((e, i) => (
+        <Card
+          selected={i === selectedCard}
           onClick={() => {
+            setselectedCard(i);
             Firestore.getExercise(e.name).then((exercise) => {
               setExercise(exercise);
             });
           }}
-          style={{ cursor: "pointer" }}
           key={e.name}
         >
-          {e.name}
-          <span>{e.complete.toString()}</span>
-        </div>
+          <Card.Title>{e.name}</Card.Title>
+          <div style={{ textAlign: "right" }}>
+            <Card.StatusTag status={e.complete ? "COMPLETED" : "INPROGRESS"} />
+          </div>
+        </Card>
       ))}
     </div>
   );

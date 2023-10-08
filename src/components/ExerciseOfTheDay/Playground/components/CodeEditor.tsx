@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { autocompletion, completionKeymap } from "@codemirror/autocomplete";
-import { SandpackCodeEditor, SandpackTests, useSandpack } from "@codesandbox/sandpack-react";
+import {
+  SandpackCodeEditor,
+  SandpackTests,
+  useSandpack,
+} from "@codesandbox/sandpack-react";
 import React, { FC, useEffect } from "react";
 import { useDebounce } from "../../../../hooks/useDebounce";
 import Firestore from "../../../../utils/Firestore";
@@ -15,10 +19,14 @@ const CodeEditor: FC<{ exercise: ExerciseOfTheDay }> = ({ exercise }) => {
   const code = files["/exercise.js"].code;
 
   const debouncedCodeUpdate = useDebounce((values: Record<string, unknown>) => {
-    Firestore.updateUserHistory(currentUser?.email as string, exercise["Exercise Name"], {
-      codeWritten: values.code,
-      complete: testsPassed,
-    });
+    Firestore.updateUserHistory(
+      currentUser?.email as string,
+      exercise["Exercise Name"],
+      {
+        codeWritten: values.code,
+        complete: testsPassed,
+      }
+    );
   }, 2000);
 
   useEffect(() => {
@@ -37,7 +45,9 @@ const CodeEditor: FC<{ exercise: ExerciseOfTheDay }> = ({ exercise }) => {
       <SandpackTests
         onComplete={(testInfo) => {
           const tests = testInfo["/exercise.test.js"].tests;
-          const passed = Object.values(tests).every((test) => test.status === "pass");
+          const passed = Object.values(tests).every(
+            (test) => test.status === "pass"
+          );
           setTestStatus(passed);
         }}
         showVerboseButton={false}

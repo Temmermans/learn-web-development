@@ -7,12 +7,14 @@ import DifficultyBadge from "../../DifficultyBadge";
 import { ExerciseOfTheDay } from "../../types";
 import CodeEditor from "./CodeEditor";
 
-const CodeChallenge: FC<{ exercise: ExerciseOfTheDay; setExercise: (exercise: ExerciseOfTheDay) => void }> = ({
-  exercise,
-  setExercise,
-}) => {
+const CodeChallenge: FC<{
+  exercise: ExerciseOfTheDay;
+  setExercise: (exercise: ExerciseOfTheDay) => void;
+}> = ({ exercise, setExercise }) => {
   const { currentUser } = useAuth();
-  const userExerciseHistory = currentUser?.practiceHistory.find((e) => e.name === exercise?.["Exercise Name"]);
+  const userExerciseHistory = currentUser?.practiceHistory.find(
+    (e) => e.name === exercise?.["Exercise Name"]
+  );
 
   if (!exercise) return null;
 
@@ -21,13 +23,19 @@ const CodeChallenge: FC<{ exercise: ExerciseOfTheDay; setExercise: (exercise: Ex
       <div className="Explanation">
         <section>
           <h3>
-            {exercise?.["Exercise Name"]} <DifficultyBadge>{exercise["Difficulty Score (1-10)"]}</DifficultyBadge>
+            {exercise?.["Exercise Name"]}{" "}
+            <DifficultyBadge>
+              {exercise["Difficulty Score (1-10)"]}
+            </DifficultyBadge>
           </h3>
           <p>{exercise?.["Description"]}</p>
           <span>Expected Output: {exercise?.["Expected Output"]}</span>
         </section>
         <section className="controls">
-          <span>Status: {userExerciseHistory?.complete ? "Complete" : "Not Completed"}</span>
+          <span>
+            Status:{" "}
+            {userExerciseHistory?.complete ? "Complete" : "Not Completed"}
+          </span>
           <button
             onClick={() => {
               const time = new Date().getTime();
@@ -50,7 +58,8 @@ const CodeChallenge: FC<{ exercise: ExerciseOfTheDay; setExercise: (exercise: Ex
           //   }}
           files={{
             "exercise.js": {
-              code: userExerciseHistory?.codeWritten || exercise["Initial Code"],
+              code:
+                userExerciseHistory?.codeWritten || exercise["Initial Code"],
               active: true,
             },
             "solution.js": {
