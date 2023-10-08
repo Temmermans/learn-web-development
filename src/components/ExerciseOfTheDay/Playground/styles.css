@@ -1,7 +1,62 @@
+:root {
+  /* Color - Elements */
+  --color-background: #0c0f17;
+  --color-primary-dark: #101f28;
+  --color-primary-mid: #132f3f;
+  --color-primary-light: #304354;
+
+  /* Color - Text */
+  --color-text: #ffffff;
+  --color-text-light: #ccdce5;
+
+  /* Color - Accents */
+  --color-accent-green: #00e794;
+  --color-accent-orange: #e79800;
+  --color-accent-blue: #6aabd0;
+
+  /* Border radius */
+  --border-radius: 10px;
+
+  /* Paddings */
+  --padding-s: 10px;
+  --padding-m: 15px;
+}
+
+.ThemeProvider.light {
+  /* Color - Elements */
+  --color-background: #ffffff;
+  --color-primary-dark: #f6f6f6;
+  --color-primary-mid: #e1f2f7;
+  --color-primary-light: #bebebe;
+
+  /* Color - Text */
+  --color-text: #000000;
+  --color-text-light: #1b1d1e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h3 {
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0 20px;
+}
+
 .container {
+  background: var(--color-background);
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text);
   display: grid;
-  grid-template-columns: 0.7fr 1fr 1fr 1fr;
-  grid-template-rows: 0.4fr 0.5fr 1fr 1fr;
+  grid-template-columns: 0.8fr 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 0.5fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   height: 100vh;
@@ -13,45 +68,64 @@
 }
 
 .Header {
-  justify-content: flex-end;
+  padding: var(--padding-m);
+  justify-content: space-between;
   align-items: center;
   display: flex;
   grid-area: Header;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-primary-light);
+}
+
+.HeaderRight,
+.HeaderLeft {
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .profile-picture {
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   margin-bottom: 0;
 }
 
 .signout {
   cursor: pointer;
   border: 0;
-  border-radius: 15px;
+  border-radius: var(--border-radius);
   font-weight: 600;
   margin: 0 10px;
   transition: 0.4s;
-  color: rgb(104, 85, 224);
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(104, 85, 224, 1);
-  padding: 0 10px;
+  color: var(--color-text);
+  background-color: transparent;
+  border: 2px solid var(--color-accent-blue);
+  padding: 2px 10px;
 }
 
-.email {
-  margin-right: 10px;
+.username {
   margin-left: 10px;
-  font-size: 12px;
+  margin-right: 10px;
   margin-bottom: 0;
+}
+
+.username.small {
+  font-size: 12px;
+  color: var(--color-text-light);
 }
 
 .History {
   grid-area: History;
-  background: white;
-  margin: 0 15px 15px 15px;
-  border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: var(--color-background);
+  border-right: 1px solid var(--color-primary-light);
+  padding: var(--padding-m);
 }
 
 .History h3 {
@@ -76,6 +150,11 @@
   margin-bottom: 15px;
 }
 
+.Explanation p,
+.Explanation span {
+  color: var(--color-text-light);
+}
+
 .Explanation .controls {
   display: flex;
   justify-content: flex-end;
@@ -86,14 +165,14 @@
 .Explanation .controls button {
   cursor: pointer;
   border: 0;
-  border-radius: 15px;
+  border-radius: var(--border-radius);
   font-weight: 600;
   margin: 0 10px;
   transition: 0.4s;
-  color: rgb(104, 85, 224);
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(104, 85, 224, 1);
-  padding: 0 10px;
+  color: var(--color-text);
+  background-color: transparent;
+  border: 2px solid var(--color-accent-blue);
+  padding: 10px 20px;
 }
 
 .Code-Area {
@@ -103,4 +182,42 @@
 
 .Code-Area span {
   margin: 0;
+}
+
+.Card {
+  background: var(--color-primary-dark);
+  border-radius: var(--border-radius);
+  min-height: 80px;
+  padding: var(--padding-s);
+  color: var(--color-text-light);
+  margin-bottom: var(--padding-m);
+  cursor: pointer;
+}
+
+.Card.Selected {
+  background: var(--color-primary-mid);
+  border: 1px solid var(--color-accent-blue);
+}
+
+.CardStatusTag {
+  background-color: var(--color-background);
+  color: var(--color-text-light);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.CardStatusTagDot {
+  background: var(--color-text);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1px;
+}
+
+.sp-wrapper,
+.sp-layout,
+.sp-stack {
+  height: 100% !important;
 }
