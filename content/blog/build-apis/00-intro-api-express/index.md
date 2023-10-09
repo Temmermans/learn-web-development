@@ -9,6 +9,7 @@ order: 1
 ## What is an API?
 
 ### How are they similar to contracts?
+
 In web development, an API (Application Programming Interface) is a set of protocols, routines, and tools for building software and applications. It provides a way for two different software applications to communicate with each other and exchange information or data.
 
 APIs are similar to contracts in that they establish a set of rules and expectations between two parties. In the case of APIs, the parties involved are the software application and the developer who wants to access the application's data or functionality. The API defines the rules of how the two applications can communicate with each other, what kind of data can be exchanged, and how it should be structured.
@@ -203,19 +204,20 @@ Content-Type: application/json
 In this example, the client is sending a GET request to the /api/users endpoint with two query parameters: status=active and sort=name. The request includes several headers, such as the user agent and authorization token. Finally, the request includes an optional request body in JSON format with data about a new user to create.
 
 ### HTTP status codes
-|Status| Code Meaning|
----- | ----
-|200|	OK  |
-|201|	Created |
-|204|	No Content  |
-|400|	Bad Request |
-|401|	Unauthorized    |
-|403|	Forbidden   |
-|404|	Not Found   |
-|405|	Method Not Allowed  |
-|500|	Internal Server Error   |
-|502|	Bad Gateway |
-|503|	Service Unavailable |
+
+| Status | Code Meaning          |
+| ------ | --------------------- |
+| 200    | OK                    |
+| 201    | Created               |
+| 204    | No Content            |
+| 400    | Bad Request           |
+| 401    | Unauthorized          |
+| 403    | Forbidden             |
+| 404    | Not Found             |
+| 405    | Method Not Allowed    |
+| 500    | Internal Server Error |
+| 502    | Bad Gateway           |
+| 503    | Service Unavailable   |
 
 ## ExpressJS Fundamental Concepts
 
@@ -225,8 +227,14 @@ In Express JS, Routing determines an application's response to the client's requ
 
 Each route contains one or more handler functions and is executed when the route is matched.
 
-[[info | :bulb: Theme: Following is the structure of Routing]]
-| `app.METHOD(PATH, HANDLER)`
+---
+
+[[info]]
+:bulb: Theme: Following is the structure of Routing
+
+`app.METHOD(PATH, HANDLER)`
+
+---
 
 **Where**:
 
@@ -345,7 +353,7 @@ router.use(
   (req, res, next) => {
     console.log("Request Type:", req.method)
     next()
-  }
+  },
 )
 
 // a middleware sub-stack that handles GET requests to the /user/:id path
@@ -360,7 +368,7 @@ router.get(
   (req, res, next) => {
     // render a regular page
     res.render("regular")
-  }
+  },
 )
 
 // handler for the /user/:id path renders a special page
@@ -428,6 +436,7 @@ app.use(function (err, req, res, next) {
 ```
 
 ## Practice
+
 Let's create the API described in the swagger above within an express application. Ignore the database for now, just use some middleware, error handling and status codes.
 
 You can find the codesandbox with a completed example [here](https://codesandbox.io/p/sandbox/intro-to-express-vw4uio).

@@ -27,8 +27,14 @@ Follow the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-In
 
 Once you've done that, create a GitHub account [here](https://github.com/join).
 
-[[info | :bulb: A quick aside: Git and GitHub]]
-| **Git and GitHub are not the same thing**. Git is an open-source, version control tool created in 2005 by developers working on the Linux operating system; GitHub is a company founded in 2008 that makes tools which integrate with git. You do not need GitHub to use git, but you cannot use GitHub without using git.
+---
+
+[[info]]
+:bulb: A quick aside: Git and GitHub
+
+**Git and GitHub are not the same thing**. Git is an open-source, version control tool created in 2005 by developers working on the Linux operating system; GitHub is a company founded in 2008 that makes tools which integrate with git. You do not need GitHub to use git, but you cannot use GitHub without using git.
+
+---
 
 ### Step 1: Create a local git repository
 
@@ -89,8 +95,14 @@ mnelson:myproject mnelson$ git add .
 
 ### Step 4: Create a commit
 
-[[info | :bulb: A quick aside: the git commit message]]
-| **Don't put a message like "asdfadsf" or "foobar"**. That makes the other people who see your commit sad. Very, very, sad. Commits live forever in a repository (technically you can delete them if you really, really need to but it’s messy), so if you leave a clear explanation of your changes it can be extremely helpful for future programmers (perhaps future you!) who are trying to figure out why some change was made years later.
+---
+
+[[info]]
+:bulb: A quick aside: the git commit message
+
+**Don't put a message like "asdfadsf" or "foobar"**. That makes the other people who see your commit sad. Very, very, sad. Commits live forever in a repository (technically you can delete them if you really, really need to but it’s messy), so if you leave a clear explanation of your changes it can be extremely helpful for future programmers (perhaps future you!) who are trying to figure out why some change was made years later.
+
+---
 
 ```bash
 mnelson:myproject mnelson$ git commit -m "This is my first commit!"

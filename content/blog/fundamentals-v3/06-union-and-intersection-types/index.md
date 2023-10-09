@@ -123,9 +123,15 @@ second
 // ^?
 ```
 
-[[info | :bulb: A good time to poke around]]
-| Click the `Try` button and explore `first` and `second` in the TS playground.
-| Explore what's available in the autocomplete for each.
+---
+
+[[info]]
+:bulb: A good time to poke around
+
+Click the `Try` button and explore `first` and `second` in the TS playground.
+Explore what's available in the autocomplete for each.
+
+---
 
 ```ts twoslash
 function maybeGetUserInfo():

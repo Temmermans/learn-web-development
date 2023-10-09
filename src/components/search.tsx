@@ -64,7 +64,7 @@ const Query: FC<{ index: string; store: Record<string, unknown> }> = ({ index, s
 
             return (
               <div onClick={() => navigate(result.path)} className="text-search-result" key={result.id}>
-                <img src={`${result.course}.png`} />
+                <img src={`/${result.course}.png`} />
                 <div>
                   <a>{result.title}</a>
                   {highlights}

@@ -18,13 +18,10 @@ const Playground: FC = () => {
 
   return (
     <ThemeProvider>
-      <div className="container">
+      <div className="playground container">
         <Header />
         <History setExercise={setExercise} />
-        <CodeChallenge
-          exercise={exercise as ExerciseOfTheDay}
-          setExercise={setExercise}
-        />
+        <CodeChallenge exercise={exercise as ExerciseOfTheDay} setExercise={setExercise} />
       </div>
     </ThemeProvider>
   );

@@ -21,10 +21,16 @@ The respond function returns a `setTimeout` function. The `setTimeout` is provid
 
 ![Callstack](./callstack2.gif)
 
-[[info | :bulb: Theme: Node.JS async execution]]
-| A similar thing happens when we run javascript in a nodejs environment. Instead of the web API (which is
-| ofcourse a browser thing), nodejs has the libuv API.
-| ![Callstack](./callstack3.gif)
+---
+
+[[info]]
+:bulb: Theme: Node.JS async execution
+
+A similar thing happens when we run javascript in a nodejs environment. Instead of the web API (which is
+ofcourse a browser thing), nodejs has the libuv API.
+![Callstack](./callstack3.gif)
+
+---
 
 Time for the event loop to do its only task: connecting the queue with the call stack! If the call stack is empty, so if all previously invoked functions have returned their values and have been popped off the stack, the first item in the queue gets added to the call stack. In this case, no other functions were invoked, meaning that the call stack was empty by the time the callback function was the first item in the queue.
 
@@ -153,7 +159,7 @@ In an ideal world, all asynchronous functions would already return promises. Unf
 ```js
 setTimeout(
   () => saySomething("10 seconds passed"),
-  10 * 1000
+  10 * 1000,
 )
 ```
 
@@ -227,7 +233,7 @@ f()
 doSomething()
   .then(function (result) {
     doSomethingElse(result).then((newResult) =>
-      doThirdThing(newResult)
+      doThirdThing(newResult),
     )
   })
   .then(() => doFourthThing())
@@ -277,10 +283,10 @@ var promise1 = Promise.resolve(catSource)
 var promise2 = Promise.resolve(dogSource)
 var promise3 = Promise.resolve(cowSource)
 
-Promise.all([promise1, promise2, promise3]).then(function (
-  values
-) {
-  console.log(values)
-})
+Promise.all([promise1, promise2, promise3]).then(
+  function (values) {
+    console.log(values)
+  },
+)
 // expected output: Array ["catData", "dogData", "cowData"]
 ```

@@ -57,14 +57,20 @@ The type `6` is called a **literal type**. If our `let` declaration is a variabl
 that can hold any `number`, the `const` declaration is one that can hold only `6` --
 a specific number.
 
-[[info | :bulb: Theme: Inferring with safe specificity]]
-| There's a common idea you'll see again and again when working with TypeScript.
-| **Inference is not so specific as to get in the way of common behavior**.
-| <br />
-| <br />
-| For example, the `let` variable declaration above could have assumed `age` to
-| be of type `6`, but this would have interfered with our ability to set this
-| re-assignable variable to `7` or `8`.
+---
+
+[[info]]
+:bulb: Theme: Inferring with safe specificity
+
+There's a common idea you'll see again and again when working with TypeScript.
+**Inference is not so specific as to get in the way of common behavior**.
+<br />
+<br />
+For example, the `let` variable declaration above could have assumed `age` to
+be of type `6`, but this would have interfered with our ability to set this
+re-assignable variable to `7` or `8`.
+
+---
 
 ## Implicit `any` and type annotations
 

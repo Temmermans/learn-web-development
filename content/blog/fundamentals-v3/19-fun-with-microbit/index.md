@@ -33,8 +33,14 @@ Connect your micro:bit to your computer or mobile device.
 - If you're using a phone or tablet, use Bluetooth to connect your micro:bit wirelessly
   Transfer from a computer
 
-[[info | :bulb: Theme: Flashing]]
-| Transferring your program to your micro:bit is called flashing because it copies your program into the micro:bit’s flash memory.
+---
+
+[[info]]
+:bulb: Theme: Flashing
+
+Transferring your program to your micro:bit is called flashing because it copies your program into the micro:bit’s flash memory.
+
+---
 
 Your micro:bit will pause and the yellow LED on the back will blink while your program is being transferred. Once it’s copied across, your program starts running on your micro:bit.
 
