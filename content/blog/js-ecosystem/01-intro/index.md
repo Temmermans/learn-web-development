@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, hostname, () => {
   console.log(
-    `Server running at http://${hostname}:${port}/`
+    `Server running at http://${hostname}:${port}/`,
   )
 })
 ```
@@ -46,6 +46,48 @@ It runs on the V8 JavaScript runtime engine, and it uses event-driven, non-block
 6. The event loop tracks blocking requests and places them in the queue once the blocking task is processed. This is how it maintains its non-blocking nature.
 
 Since Node.js uses fewer threads, it utilizes fewer resources/memory, resulting in faster task execution. So for our purposes, this single-threaded architecture is equivalent to multi-threaded architecture. When one needs to process data-intensive tasks, then using multi-threaded languages like Java makes much more sense. But for real-time applications, Node.js is the obvious choice.
+
+Let's illustrate how servers work using a raspberry pi.
+
+Let's create a very simple server that counts the number of times you hit a route.
+
+```js
+const express = require("express")
+const app = express()
+const port = 3000
+
+const hits = {}
+
+app.get("/hit/:name/count", (req, res) => {
+  const { name } = req.params
+  if (hits[name]) {
+    hits[name]++
+  } else {
+    hits[name] = 1
+  }
+  res.status(200).send("Done!")
+})
+
+app.get("/info/:name/count", (req, res) => {
+  const { name } = req.params
+  res.status(200).json({
+    name,
+    count: hits[name] || 0,
+  })
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+```
+
+If we deploy this code on the raspberry pi, we can hit the routes (server) from our laptops (clients) and see the results.
+
+You see the clients store the state of the application. The client doesn't know anything about how many times you already hit the route.
+
+Now if you are using an application on the cloud, just imagine a data center somewhere with a million of those raspberry pi's running server code, ready to respond to client applications.
+
+Now, copy the HTML and CSS from the [Counting Events](https://learn.simoncodes.be/course/vanilla-javascript/23-practice/#counting-events) exercise. Use the API from the Pi and display the count on the screen.
 
 ## NPM
 

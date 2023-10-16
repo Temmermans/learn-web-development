@@ -121,6 +121,12 @@ Use the marvel API to show heroes and some extra information:
 
 <iframe src="https://stackblitz.com/edit/js-j75n9r?embed=1&file=index.js&view=editor"></iframe>
 
+## Simple chat application
+
+Using the raspberry pi as a server, build a simple chat application:
+
+<iframe src="https://stackblitz.com/edit/js-ztydfu?file=index.html&view=editor"></iframe>
+
 ## Weather App
 
 Build a weather map that checks what the weather is for a given city:
