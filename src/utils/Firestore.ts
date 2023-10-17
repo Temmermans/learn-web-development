@@ -7,6 +7,7 @@ import {
   getCountFromServer,
   getDoc,
   getDocs,
+  limit,
   orderBy,
   query,
   serverTimestamp,
@@ -80,7 +81,7 @@ export default class Firestore {
     const path = doc(db, "users", user.email!);
     return getDoc(path).then((docSnap) => {
       if (docSnap.exists()) {
-        const historyPath = collection(db, "users", user.email!, "history");
+        const historyPath = query(collection(db, "users", user.email!, "history"), orderBy("lastUpdate"), limit(10));
         return getDocs(historyPath).then((historySnap) => {
           return {
             ...user,
