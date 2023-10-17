@@ -121,6 +121,12 @@ Use the marvel API to show heroes and some extra information:
 
 <iframe src="https://stackblitz.com/edit/js-j75n9r?embed=1&file=index.js&view=editor"></iframe>
 
+## Chuck Norris API
+
+Use the Chuck Norris API to show a random joke:
+
+<iframe src="https://stackblitz.com/edit/js-t8m2fm?file=index.html&view=editor"></iframe>
+
 ## Simple chat application
 
 Using the raspberry pi as a server, build a simple chat application:
