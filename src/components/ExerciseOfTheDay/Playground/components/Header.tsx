@@ -4,6 +4,7 @@ import React, { FC } from "react";
 import { auth } from "../../../../utils/firebase";
 import { useAuth } from "../../../AuthContext";
 import DarkModeToggle from "./DarkModeToggle";
+import SettingsPanel from "./SettingsPanel";
 
 const Header: FC = () => {
   const { currentUser } = useAuth();
@@ -23,6 +24,7 @@ const Header: FC = () => {
           <b className="username">{currentUser?.displayName}</b>
           <p className="username small">Exercises done: {currentUser?.practiceHistory?.length}</p>
         </section>
+        <SettingsPanel />
         <button className="signout" onClick={async () => await signOut(auth)}>
           Log out
         </button>

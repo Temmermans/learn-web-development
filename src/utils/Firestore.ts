@@ -12,6 +12,7 @@ import {
   query,
   serverTimestamp,
   setDoc,
+  where,
 } from "firebase/firestore";
 import babel from "prettier/plugins/babel";
 import estree from "prettier/plugins/estree";
@@ -52,10 +53,13 @@ export default class Firestore {
   }
 
   public static getExerciseOfTheDay(n?: number): Promise<ExerciseOfTheDay> {
-    return getCountFromServer(collection(db, "exercise-of-the-day")).then((snapshot) => {
+    const categoryFilter = localStorage.getItem("category")
+      ? [where("Category", "==", localStorage.getItem("category"))]
+      : [];
+    return getCountFromServer(query(collection(db, "exercise-of-the-day"), ...categoryFilter)).then((snapshot) => {
       const arng = new (Alea as any)(n || this.dateToEpoch());
       const rand = Math.ceil(arng() * snapshot.data().count);
-      const q = query(collection(db, "exercise-of-the-day"), orderBy("Exercise Name"));
+      const q = query(collection(db, "exercise-of-the-day"), ...categoryFilter, orderBy("Exercise Name"));
       return getDocs(q).then((querySnapshot) => {
         // any way to avoid fetching all the data?
         const exercise = (
@@ -81,7 +85,11 @@ export default class Firestore {
     const path = doc(db, "users", user.email!);
     return getDoc(path).then((docSnap) => {
       if (docSnap.exists()) {
-        const historyPath = query(collection(db, "users", user.email!, "history"), orderBy("lastUpdate"), limit(10));
+        const historyPath = query(
+          collection(db, "users", user.email!, "history"),
+          orderBy("lastUpdate", "desc"),
+          limit(10)
+        );
         return getDocs(historyPath).then((historySnap) => {
           return {
             ...user,

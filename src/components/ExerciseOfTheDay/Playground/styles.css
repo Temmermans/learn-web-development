@@ -222,3 +222,11 @@
 .sp-stack {
   height: 100% !important;
 }
+
+[type="radio"] {
+  margin-left: 10px;
+}
+
+[type="radio"] + label {
+  margin-left: 10px;
+}
