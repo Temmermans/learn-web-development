@@ -16,7 +16,7 @@ We've been able to modify HTML and CSS using JavaScript using `document`. Awesom
 <button class="event-button">Click me!</button>
 ```
 
-<button class="event-button">Click me!</button>
+<button class="event-button" onclick="alert('Hey there!')">Click me!</button>
 
 ```javascript
 const button = document.querySelector(".event-button")

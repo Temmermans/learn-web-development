@@ -36,6 +36,14 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-mermaid`,
+            options: /** @type {import('gatsby-remark-mermaid').Options} */ ({
+              mermaidConfig: {
+                theme: "forest",
+              },
+            }),
+          },
           `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images`,

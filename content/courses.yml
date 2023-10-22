@@ -13,6 +13,16 @@
   disabled: false
   squareImage: /js-ecosystem.png
   summary: Get an overview of the different tools used to support your development efforts.
+- title: "Build a web app without frameworks"
+  id: do-you-need-a-framework
+  disabled: false
+  squareImage: /do-you-need-a-framework.png
+  summary: In this section we will add some more tools to your toolbelt to build applications without any framework or build tools (React, Svelte, Webpack, ...)
+- title: "Build APIs with Node.JS"
+  id: build-apis
+  disabled: false
+  squareImage: /build-apis.png
+  summary: Use Node.JS to build APIs that web apps can consume. Learn about different kinds of databases that can be used to stored your applications data.
 - title: "TypeScript Fundamentals"
   id: fundamentals-v3
   disabled: false
@@ -20,11 +30,6 @@
   summary:
     Learn everything you need to know in order to confidently and successfully
     use TypeScript to build a modern JavaScript app.
-- title: "Build APIs with Node.JS"
-  id: build-apis
-  disabled: false
-  squareImage: /build-apis.png
-  summary: Use Node.JS to build APIs that web apps can consume. Learn about different kinds of databases that can be used to stored your applications data.
 - title: "Big O & Algorithms"
   id: computer-science
   disabled: false

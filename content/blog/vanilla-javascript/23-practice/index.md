@@ -103,12 +103,6 @@ Build a little guessing game where you can enter a number and see if it is the c
 
 <iframe src="https://stackblitz.com/edit/js-yuscsj?embed=1&file=index.js&view=editor"></iframe>
 
-## Book App
-
-Use classes to build an app to manage books:
-
-<iframe src="https://stackblitz.com/edit/js-prds9f?embed=1&file=index-FINISHED.js&view=editor"></iframe>
-
 ## Counting events
 
 Create a counter using the countapi to show how many times a button has been clicked:
