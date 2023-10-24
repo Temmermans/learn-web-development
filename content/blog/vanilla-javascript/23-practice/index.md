@@ -121,6 +121,16 @@ Use the Chuck Norris API to show a random joke:
 
 <iframe src="https://stackblitz.com/edit/js-t8m2fm?file=index.html&view=editor"></iframe>
 
+## Validate Credit Card IBAN
+
+Validate the IBAN number entered in this form:
+
+<iframe src="https://stackblitz.com/edit/js-blyxsm?file=index.html&hideDevTools=1"></iframe>
+
+## Build a small trivia app
+
+<iframe src="https://stackblitz.com/edit/js-hbxn4w?file=index.html&hideDevTools=1"></iframe>
+
 ## Simple chat application
 
 Using the raspberry pi as a server, build a simple chat application:
