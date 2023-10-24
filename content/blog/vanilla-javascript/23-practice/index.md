@@ -131,6 +131,10 @@ Validate the IBAN number entered in this form:
 
 <iframe src="https://stackblitz.com/edit/js-hbxn4w?file=index.html&hideDevTools=1"></iframe>
 
+## Emoji Picker
+
+<iframe src="https://stackblitz.com/edit/js-b96jst?file=index.html&hideDevTools=1"></iframe>
+
 ## Simple chat application
 
 Using the raspberry pi as a server, build a simple chat application:
