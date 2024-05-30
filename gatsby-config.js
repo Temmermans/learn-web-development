@@ -12,12 +12,12 @@ module.exports = {
     DEV_SSR: true,
   },
   siteMetadata: {
-    title: `Learn Web Development`,
+    title: `Learn To Code`,
     author: {
       name: `Simon Temmerman`,
       summary: `, Co-founder of dScribe data and teacher @Syntra.`,
     },
-    description: `Learn Web Development with Simon Temmerman`,
+    description: `Learn To Code with Simon Temmerman`,
     siteUrl: `https://www.simon-says.com/`,
     social: {
       linkedin: "simontemmerman",

@@ -1,3 +1,8 @@
+- title: "Learn to code with Scratch"
+  id: scratch
+  disabled: false
+  squareImage: /scratch.png
+  summary: Get familiar with coding concepts and build games using scratch.
 - title: "Working with GIT"
   id: git
   disabled: false
