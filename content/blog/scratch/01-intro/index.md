@@ -5,6 +5,7 @@ description: |
   Learn to find your way around the scratch editor.
 course: scratch
 order: 1
+credits: Steve Kinney|https://scratch-workshop.vercel.app/adding-enemies-to-raining-apples
 ---
 
 ## #1 Goal for this course

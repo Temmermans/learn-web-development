@@ -5,6 +5,7 @@ description: |
   Build your first game called Taco Chase.
 course: scratch
 order: 4
+credits: Steve Kinney|https://scratch-workshop.vercel.app
 ---
 
 ## #1 Goal for this course

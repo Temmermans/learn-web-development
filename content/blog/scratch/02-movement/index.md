@@ -5,6 +5,7 @@ description: |
   Learn how to move sprites around on your canvas.
 course: scratch
 order: 2
+credits: Steve Kinney|https://scratch-workshop.vercel.app/adding-enemies-to-raining-apples
 ---
 
 ## #1 Goal for this course

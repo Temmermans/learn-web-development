@@ -5,6 +5,7 @@ description: |
   Learn what a game loop is and how to implement it in scratch.
 course: scratch
 order: 3
+credits: Steve Kinney|https://scratch-workshop.vercel.app
 ---
 
 ## #1 Goal for this course
