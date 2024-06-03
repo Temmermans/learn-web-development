@@ -138,7 +138,7 @@ I went for 5 steps because I wanted our enemy to be a little bit slower than our
 
 And now, the game will end whenever our enemy catches up the our player. You can see this iteration of the game here.
 
-<iframe class="mx-auto" title="A Scratch Playground" src="https://scratch.mit.edu/projects/878930247/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+<iframe src="https://scratch.mit.edu/projects/1031383436/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
 ### Making The Game Progressively Faster
 
@@ -156,4 +156,4 @@ Your enemy will look like this:
 
 And now, you’ll see the game gets progressively harder as we eat tacos.
 
-<iframe class="mx-auto" title="A Scratch Playground" src="https://scratch.mit.edu/projects/882159439/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen=""></iframe>
+<iframe src="https://scratch.mit.edu/projects/1031384004/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe

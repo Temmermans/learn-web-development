@@ -94,14 +94,7 @@ button.dispatchEvent(event)
 7. **EventListener Execution:**
    - Even multiple event listeners attached to the same event execute sequentially due to the single-threaded nature of JavaScript.
 
-```mermaid
-sequenceDiagram
-   participant User
-   participant Event1
-   participant Event2
-   User->>Event1: Triggers Event1
-   Event1->>Event2: Execution passes to Event2 after Event1 finishes
-```
+[![](https://mermaid.ink/img/pako:eNptkLEOwjAMRH_F8gwDjBk6wRcAWxYrddtINCm2g0CIfydAkZBgOz_dneS7Ycgto0PlU-EUeBOpFxp9AoCJxGKIEyWDg7L8wO2Zk63-4_ULP2PLpnkbHewl9j2Lfiff8mNaO9heOBSLOdVSVVawPFcCdcYyJ6CLKerAigscWUaKbf3j9uz0aAOP7NFV2XJH5WgefbpXKxXLu2sK6EwKL1By6Qd0HR21XmVqyT4jzPT-AFcUZXQ?type=png)](https://mermaid.live/edit#pako:eNptkLEOwjAMRH_F8gwDjBk6wRcAWxYrddtINCm2g0CIfydAkZBgOz_dneS7Ycgto0PlU-EUeBOpFxp9AoCJxGKIEyWDg7L8wO2Zk63-4_ULP2PLpnkbHewl9j2Lfiff8mNaO9heOBSLOdVSVVawPFcCdcYyJ6CLKerAigscWUaKbf3j9uz0aAOP7NFV2XJH5WgefbpXKxXLu2sK6EwKL1By6Qd0HR21XmVqyT4jzPT-AFcUZXQ)
 
 ## Project progress
 

@@ -48,14 +48,7 @@ class MyElement extends HTMLElement {
 customElements.define("my-element", MyElement)
 ```
 
-```mermaid
-sequenceDiagram
-    Participant MyElement as My Element
-    Participant DOM
-    MyElement->>+DOM: constructor()
-    DOM->>+MyElement: connectedCallback()
-    DOM->>-MyElement: disconnectedCallback()
-```
+[![](https://mermaid.ink/img/pako:eNptkDEOwjAMRa9SeQIBF8jAAowIJNYsJnFLRJpA4gwI9e64FCoQePL_fl-yfQcTLYGCTNdCwdDaYZOw1aGS2mNiZ9wFA1fb28ZTS9JhFlG91C-43m0Hc0wslsuZuKoyMWROxXBMk-kAid-PR_YJBTJMdoXeH9Gcv9HFB2pd_kPDHFpKLTord937rAY-SUSDktZSjcWzBh06QbFwPNyCASWb0RxSLM0JVI0-iyoXi_x-ysvtHq4aaAc?type=png)](https://mermaid.live/edit#pako:eNptkDEOwjAMRa9SeQIBF8jAAowIJNYsJnFLRJpA4gwI9e64FCoQePL_fl-yfQcTLYGCTNdCwdDaYZOw1aGS2mNiZ9wFA1fb28ZTS9JhFlG91C-43m0Hc0wslsuZuKoyMWROxXBMk-kAid-PR_YJBTJMdoXeH9Gcv9HFB2pd_kPDHFpKLTord937rAY-SUSDktZSjcWzBh06QbFwPNyCASWb0RxSLM0JVI0-iyoXi_x-ysvtHq4aaAc)
 
 ### Attributes and Lifecycle
 

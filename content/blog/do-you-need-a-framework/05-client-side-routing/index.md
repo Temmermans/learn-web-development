@@ -15,35 +15,19 @@ order: 5
 
 #### Traditional Full Page Reload
 
-```mermaid
-sequenceDiagram
-    Browser->>Server: Request page
-    Server->>Browser: Send page
-    Browser->>Browser: Load page
-```
+[![](https://mermaid.ink/img/pako:eNpNzjsOgzAMBuCrIM_0AhkYqo6dyprFSkxAIgl1klYV4u41Cn14sn9_sryCiZZAQaJ7oWDoMqFj9Do0UmeOz0R86rqe-EGsmtvOUm4WdFRN3Qg5sJIk2D_wO_IV14hVQAue2ONk5YV19xrySJ40KGktDVjmrEGHTSiWHPtXMKAyF2qBY3EjqAHnJFNZLObP_0e6vQFao0xd?type=png)](https://mermaid.live/edit#pako:eNpNzjsOgzAMBuCrIM_0AhkYqo6dyprFSkxAIgl1klYV4u41Cn14sn9_sryCiZZAQaJ7oWDoMqFj9Do0UmeOz0R86rqe-EGsmtvOUm4WdFRN3Qg5sJIk2D_wO_IV14hVQAue2ONk5YV19xrySJ40KGktDVjmrEGHTSiWHPtXMKAyF2qBY3EjqAHnJFNZLObP_0e6vQFao0xd)
 
 - **Traditional Full Page Reload:** The browser requests a page from the server, which sends back the full page content, causing the browser to fully reload the page.
 
 #### Client-side Routing with History API
 
-```mermaid
-sequenceDiagram
-    Browser->>Browser: User clicks link
-    Browser->>Browser: pushState() and load new content via AJAX
-    Browser->>Browser: Update page without full reload
-```
+[![](https://mermaid.ink/img/pako:eNp1TzGKAzEM_IpQdYHcB1wEclx1bQhc4UbY2l0Tr7yxpSwh5O_nHNtGhZgRoxnpgaFERoeNr8YS-DvRWGn2Ar2-alkb18_DYUMOzr1DyClcGuQkl7fCxdp0UlL-2AFJhFwogvAKoYiyKNwSwfHn-Ps-aol9HRYaGdakUzGFwXKGyi8z3OPMdaYU-_mPl4tHnXhmj67DyANZVo9enl1KpuV0l4BOq_Eea7FxQjdQbp3Zf9T2-zZ9_gFtxmIf?type=png)](https://mermaid.live/edit#pako:eNp1TzGKAzEM_IpQdYHcB1wEclx1bQhc4UbY2l0Tr7yxpSwh5O_nHNtGhZgRoxnpgaFERoeNr8YS-DvRWGn2Ar2-alkb18_DYUMOzr1DyClcGuQkl7fCxdp0UlL-2AFJhFwogvAKoYiyKNwSwfHn-Ps-aol9HRYaGdakUzGFwXKGyi8z3OPMdaYU-_mPl4tHnXhmj67DyANZVo9enl1KpuV0l4BOq_Eea7FxQjdQbp3Zf9T2-zZ9_gFtxmIf)
 
 - **Client-side Routing with History API:** Using the History API, new page content is loaded via AJAX, and the browser URL and content are updated without a full page reload, providing a smoother user experience.
 
 #### Mixed Client-Server Routing
 
-```mermaid
-sequenceDiagram
-    Browser->>Browser: User clicks link
-    Browser->>Server: Request for new content via AJAX
-    Server->>Browser: Send new content
-    Browser->>Browser: pushState() and update page with new content
-```
+[![](https://mermaid.ink/img/pako:eNp1UE1rwzAM_StCpw66P-BDoaOnHRcKO_gibCUxTeTMlhtG6X-fQ3IIhekg9MR7Tx8PdNEzGsz8U1gcXwJ1iUYrUOMjxTlzej-dtsrAtWZwQ3C3DEOQ2yux4XRfeF-LX1ZoYwLhGVwUZVG4B4Lz5_l71a3svX_D4veCfxeZSu4bJeXDG1DVlMlXABN1DHPQfm-CRxw5jRR8vfSxWFrUnke2aGrpuaUyqEUrz0qlorH5FYdGU-Ejpli6Hk1LQ65onbO9aes-_wAojHD8?type=png)](https://mermaid.live/edit#pako:eNp1UE1rwzAM_StCpw66P-BDoaOnHRcKO_gibCUxTeTMlhtG6X-fQ3IIhekg9MR7Tx8PdNEzGsz8U1gcXwJ1iUYrUOMjxTlzej-dtsrAtWZwQ3C3DEOQ2yux4XRfeF-LX1ZoYwLhGVwUZVG4B4Lz5_l71a3svX_D4veCfxeZSu4bJeXDG1DVlMlXABN1DHPQfm-CRxw5jRR8vfSxWFrUnke2aGrpuaUyqEUrz0qlorH5FYdGU-Ejpli6Hk1LQ65onbO9aes-_wAojHD8)
 
 - **Mixed Client-Server Routing:** A combination where new content is requested from the server, received, and then the page is updated using the History API, enabling a more dynamic page update without a full reload.
 

@@ -83,3 +83,9 @@ Add the code from the following screenshot and notice how the lava is sloshing b
 ![alt text](image-2.png)
 
 Go ahead and create some more animations (maybe the candles or some dripping lava?). Use those moving sprites in your level!
+
+### Enemy and Hero sprites
+
+Let's try to build something like this:
+
+<iframe src="https://scratch.mit.edu/projects/1030542582/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
